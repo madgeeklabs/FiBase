@@ -1,0 +1,16 @@
+{
+  "name": "nuntii-back",
+  "description": "real time messaging",
+  "version": "0.0.1",
+  "private": true,
+  "scripts" : {
+    "start" : "node app.js"
+  },
+  "dependencies": {
+  	"socket.io" : "*",
+    "body-parser": "*",
+    "colors": "*",
+    "express": "4.X",
+    "cors" : "*"
+  }
+}
