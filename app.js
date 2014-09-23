@@ -24,8 +24,8 @@ io.on('connection', function (socket) {
 	outSocket = socket;
 
 	socket.on('newnews', function (data) {
-		socket.broadcast.emit('news', { picture: 'http://1.bp.blogspot.com/_xoP2ezvpU7I/TOpwOt_abqI/AAAAAAAAAoI/gJZ8nRSZkoU/s1600/zoidberg.png',
-		text: 'Zoidberg is da best' });
+		socket.broadcast.emit('news', { picture: 'http://130.206.83.144:3003/public/logo.png',
+		text: 'FiBase real time feed ON' });
 		console.log(data);
 	});
 });
