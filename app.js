@@ -2,6 +2,7 @@ var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser  = require('body-parser');
+var outSocket;
 
 server.listen(3003);
 
@@ -13,6 +14,8 @@ app.get('/', function (req, res) {
 io.on('connection', function (socket) {
 	console.log('connected someone');
 	
+	outSocket = socket;
+
 	socket.on('newnews', function (data) {
 		socket.broadcast.emit('news', { picture: 'http://1.bp.blogspot.com/_xoP2ezvpU7I/TOpwOt_abqI/AAAAAAAAAoI/gJZ8nRSZkoU/s1600/zoidberg.png',
 		text: 'Zoidberg is da best' });
@@ -22,4 +25,8 @@ io.on('connection', function (socket) {
 
 app.post('/listening', function (req, res) {
 	console.log(req.body.contextResponses[0].contextElement);
+
+	socket.broadcast.emit('news', { picture: 'http://1.bp.blogspot.com/_xoP2ezvpU7I/TOpwOt_abqI/AAAAAAAAAoI/gJZ8nRSZkoU/s1600/zoidberg.png',
+		text: 'Zoidberg is da best' });
+		console.log(data);
 });
