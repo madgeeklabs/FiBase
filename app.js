@@ -3,7 +3,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser  = require('body-parser');
 
-server.listen(3000);
+server.listen(3003);
 
 app.use( bodyParser.json() ); 
 app.get('/', function (req, res) {
