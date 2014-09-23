@@ -20,6 +20,6 @@ io.on('connection', function (socket) {
 	});
 });
 
-app.get('/listinng', function (req, res) {
+app.post('/listening', function (req, res) {
 	console.log(req.body);
 });
