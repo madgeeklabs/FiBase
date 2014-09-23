@@ -1,12 +1,15 @@
 var app = require('express')();
+var express = require('express');
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser  = require('body-parser');
 var colors = require('colors');
 var outSocket;
+var PORT = 3003;
 
-server.listen(3003);
+server.listen(PORT);
 
+console.log("SERVER UP LISTENING ON: ".yellow + PORT);
 app.use( bodyParser.json() ); 
 
 app.use('/CLIENT', express.static(__dirname + '/public'));
