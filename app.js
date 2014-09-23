@@ -26,7 +26,7 @@ io.on('connection', function (socket) {
 app.post('/listening', function (req, res) {
 	console.log(req.body.contextResponses[0].contextElement);
 
-	socket.broadcast.emit('news', { picture: 'http://1.bp.blogspot.com/_xoP2ezvpU7I/TOpwOt_abqI/AAAAAAAAAoI/gJZ8nRSZkoU/s1600/zoidberg.png',
+	outSocket.broadcast.emit('news', { picture: 'http://1.bp.blogspot.com/_xoP2ezvpU7I/TOpwOt_abqI/AAAAAAAAAoI/gJZ8nRSZkoU/s1600/zoidberg.png',
 		text: 'Zoidberg is da best' });
 		console.log(data);
 });
