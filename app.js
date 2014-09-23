@@ -21,5 +21,5 @@ io.on('connection', function (socket) {
 });
 
 app.post('/listening', function (req, res) {
-	console.log(req.body);
+	console.log(req.body.contextResponses[0].contextElement);
 });
