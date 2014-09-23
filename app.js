@@ -12,7 +12,7 @@ server.listen(PORT);
 console.log("SERVER UP LISTENING ON: ".yellow + PORT);
 app.use( bodyParser.json() ); 
 
-app.use('/CLIENT', express.static(__dirname + '/public'));
+app.use('/public', express.static(__dirname + '/CLIENT'));
 
 app.get('/', function (req, res) {
 	res.sendfile(__dirname + '/index.html');
