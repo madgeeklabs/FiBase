@@ -29,6 +29,6 @@ app.post('/listening', function (req, res) {
 	console.log(req.body.contextResponses[0].contextElement);
 
 	outSocket.broadcast.emit('news', { picture: 'http://1.bp.blogspot.com/_xoP2ezvpU7I/TOpwOt_abqI/AAAAAAAAAoI/gJZ8nRSZkoU/s1600/zoidberg.png',
-		text: change.description });
+		text: change.attributes[1].value });
 		console.log('DATA CHANGED IN GE, PUSHING THROUGH'.green);
 });
